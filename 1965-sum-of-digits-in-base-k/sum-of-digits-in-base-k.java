@@ -10,7 +10,7 @@ class Solution {
         String s=sb.toString();
         System.out.print(s);
         int res=Integer.parseInt(s);
-        int sum=0;
+      int sum=0;
       while(res!=0)
       {
            sum+=res%10;
