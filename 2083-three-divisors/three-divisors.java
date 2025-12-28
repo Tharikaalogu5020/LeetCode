@@ -7,8 +7,9 @@ class Solution {
             {
                 c++;
             }
+            if(c>3) return false;
         }
-       return c==3?true:false;
+       return c==3;
 
     }
 }
