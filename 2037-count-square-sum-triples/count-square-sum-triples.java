@@ -5,13 +5,14 @@ class Solution {
         {
             for(int j=1;j<=n;j++)
             {
-                for(int k=1;k<=n;k++)
-                {
-                    if(i*i+j*j ==k*k)
+                int res=i*i+j*j;
+                int ans=(int)Math.sqrt(res);               
+                
+                    if(ans<=n&&ans*ans==res)
                     {
                         c++;
                     }
-                }
+                
             }
         }
         return c;
