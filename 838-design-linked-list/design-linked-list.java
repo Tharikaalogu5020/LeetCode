@@ -12,7 +12,7 @@ class MyLinkedList {
     }
 
     Node head;   // head of linked list
-    int size;    // to track length
+    int size;    
 
     public MyLinkedList() {
         head = null;
@@ -106,10 +106,11 @@ class MyLinkedList {
         }
 
         temp.next = temp.next.next;
-        size--;
-    }
+     
+    
+       size--;
 }
-
+}
 
 /**
  * Your MyLinkedList object will be instantiated and called as such:
