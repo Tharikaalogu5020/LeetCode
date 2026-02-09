@@ -10,27 +10,26 @@
  */
 class Solution {
     public ListNode swapPairs(ListNode head) {
-        ArrayList<Integer> arr=new ArrayList<>();
-        ListNode temp=head;
-        while(temp!=null)
+       if(head==null || head.next==null)
+       {
+        return head;
+       }
+       ListNode prev=null;
+       ListNode temp=head;
+       ListNode newnode=head.next;
+       while(temp!=null && temp.next!=null)
+       {
+        ListNode temp2=temp.next;
+        ListNode nextpair=temp2.next;
+        temp2.next=temp;
+        temp.next=nextpair;
+        if(prev!=null)
         {
-            arr.add(temp.val);
-            temp=temp.next;
+prev.next=temp2;
         }
-        for(int i=1;i<arr.size();i+=2)
-        {
-            int tpm=arr.get(i-1);
-            arr.set(i-1,arr.get(i));
-            arr.set(i,tpm);
-
-        }
-        ListNode dummy=new ListNode(0);
-        ListNode dup=dummy;
-    for(int n:arr)
-    {
-        dup.next=new ListNode(n);
-        dup=dup.next;
+        prev=temp;
+        temp=nextpair;
+       }
+     return newnode;
+       }
     }
-    return dummy.next;
-    }
-}
