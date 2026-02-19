@@ -1,21 +1,32 @@
 import java.util.*;
 class MinStack {
-    Stack<Integer> s1;
-    Stack<Integer> s2;
+    Node head;
+    Node min;
+    class Node{
+        int data;
+        Node next;
+        Node(int v)
+        {
+            data=v;
+            next=null;
+        }
+    }
    
     public MinStack() {
-     s1=new Stack<>();
-s2=new Stack<>();
+      head=null;
+      min=null;
     }
     
     public void push(int val) {
-       s1.push(val);
-     if(s2.isEmpty()||s2.peek()>=val)
-     {
-        s2.push(val);
-     }
-    
-     
+         Node newnode=new Node(val);
+         newnode.next=head;
+         head=newnode;
+         if(min==null||min.data>=val)
+         {
+            Node nn=new Node(val);
+            nn.next=min;
+            min=nn;
+         }
      
      
      }
@@ -24,19 +35,21 @@ s2=new Stack<>();
     
     
     public void pop() {
-      if(s1.peek().equals(s2.peek()))
-      {
-        s2.pop();
-      }
-      s1.pop();
+         int head1=head.data;
+         head=head.next;
+         if(head1==min.data)
+         {
+            min=min.next;
+         }
+
     }
     
     public int top() {
-        return s1.peek();
+       return head.data;
     }
     
     public int getMin() {
-        return s2.peek();
+       return min.data;
     }
 }
 
