@@ -6,10 +6,10 @@ class Solution {
         {
             freq[c-'a']++;
         }
-    
+    int[] freq1=new int[26];
        for(int i=0;i<s.length()-p.length()+1;i++)
        {
-            int[] freq1=new int[26];
+            
            String res=s.substring(i,p.length()+i);
            for(char c:res.toCharArray())
            {
@@ -21,6 +21,10 @@ class Solution {
                    arr.add(i); 
                 
             }
+            for(char c:res.toCharArray())
+                       {
+                                   freq1[c-'a']--;
+                                               }
         }
         
 return arr;
