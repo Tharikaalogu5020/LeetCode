@@ -15,7 +15,7 @@ class Solution {
            {
             freq1[c-'a']++;
             }
-            if(Arrays.equals(freq,freq1))
+            if(check(freq,freq1))
             {
                
                    arr.add(i); 
@@ -29,4 +29,15 @@ class Solution {
         
 return arr;
     }
+    public boolean check(int[] a,int[] b)
+    {
+    for(int i=0;i<26;i++)
+    {
+   if(a[i]!=b[i])
+     {
+       return false;
+   }
+ }
+ return true;
 }
+ }
