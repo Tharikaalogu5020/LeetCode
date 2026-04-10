@@ -4,7 +4,7 @@ class Solution {
         for(int i=0;i<s.length();i++)
         {
             char c=s.charAt(i);
-            if(Character.isLetter(c))
+            if(c!='#')
             {
                      s1.push(c);
              }
@@ -28,7 +28,7 @@ class Solution {
         for(int i=0;i<t.length();i++)
         {
             char c=t.charAt(i);
-            if(Character.isLetter(c))
+            if(c!='#')
             {
                 s2.push(c);
             }
