@@ -1,18 +1,17 @@
 class Solution {
     public int findDuplicate(int[] nums) {
-       Set<Integer> s=new HashSet<>();
-       int val=0;
-       for(int n:nums)
-       {
-        if(!s.contains(n))
+      boolean[] bool=new boolean[nums.length];
+      for(int i:nums)
+      {
+        if(bool[i])
         {
-           s.add(n);
+            return i;
         }
         else
         {
-             val=n;
+            bool[i]=true;
         }
-       }
-       return val;
+      }
+      return 0;
     }
 }
