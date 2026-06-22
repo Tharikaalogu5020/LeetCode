@@ -15,38 +15,31 @@
  */
 class Solution {
     public boolean isSubtree(TreeNode root, TreeNode subroot) {
-      Queue<TreeNode> q=new LinkedList<>();
-      q.add(root);
-      while(!q.isEmpty())
-      {
-        TreeNode curr=q.poll();
-        if(issame(curr,subroot))
+        if(root==null)
+        {
+            return false;
+        }
+        if(issame(root,subroot))
         {
             return true;
         }
-        if(curr.left!=null)
-        {
-            q.add(curr.left);
-        }
-        if(curr.right!=null)
-        {
-            q.add(curr.right);
-        }
-      }
-      return false;
+        return isSubtree(root.left,subroot) || isSubtree(root.right,subroot);
     }
-    public static boolean issame(TreeNode root,TreeNode root1)
+    public static boolean issame(TreeNode root,TreeNode subroot)
     {
-        if(root==null && root1==null) return true;
-        if(root.left!=null && root1.left==null || root.left==null && root1.left!=null || root.right!=null && root1.right==null || root.right==null && root1.right!=null)
+        if(root==null && subroot==null)
+        {
+            return true;
+        }
+        if(root==null || subroot==null)
         {
             return false;
         }
-        if(root.val!=root1.val)
+        if(root.val !=subroot.val)
         {
-            return false;
+          return false;
         }
-        return issame(root.left,root1.left) && issame(root.right,root1.right);
+        return issame(root.left,subroot.left) && issame(root.right,subroot.right);
     }
 
 }
