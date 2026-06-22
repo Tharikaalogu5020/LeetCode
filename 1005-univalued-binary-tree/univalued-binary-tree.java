@@ -38,7 +38,6 @@ class Solution {
             
         }
        }
-       System.out.print(s);
     return s.size()==1;
     
     }
