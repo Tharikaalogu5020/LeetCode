@@ -26,15 +26,16 @@ class Solution {
        while(!q.isEmpty())
        {
         TreeNode curr=q.poll();
+        s.add(curr.val);
         if(curr.left!=null)
         {
             q.add(curr.left);
-            s.add(curr.left.val);
+            
         }
         if(curr.right!=null)
         {
             q.add(curr.right);
-            s.add(curr.right.val);
+            
         }
        }
        System.out.print(s);
