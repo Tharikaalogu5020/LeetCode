@@ -15,32 +15,22 @@
  */
 class Solution {
     public boolean isUnivalTree(TreeNode root) {
+       return issame(root,root.val);
+    }
+    public static boolean issame(TreeNode root,int val)
+    {
         if(root==null)
         {
             return true;
         }
-       Queue<TreeNode> q=new LinkedList<>();
-       Set<Integer> s=new HashSet<>();
-       q.add(root);
-       s.add(root.val);
-       while(!q.isEmpty())
-       {
-        TreeNode curr=q.poll();
-        s.add(curr.val);
-        if(curr.left!=null)
+        if(root.val!=val)
         {
-            q.add(curr.left);
-            
+            return false;
         }
-        if(curr.right!=null)
-        {
-            q.add(curr.right);
-            
-        }
-       }
-    return s.size()==1;
+        return issame(root.left,val)&&issame(root.right,val);
+    }
+   
     
     }
     
 
-}
