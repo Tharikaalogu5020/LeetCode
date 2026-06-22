@@ -31,14 +31,11 @@ class Solution {
         {
             return true;
         }
-        if(root==null || subroot==null)
+        if(root==null || subroot==null ||root.val!=subroot.val)
         {
             return false;
         }
-        if(root.val !=subroot.val)
-        {
-          return false;
-        }
+       
         return issame(root.left,subroot.left) && issame(root.right,subroot.right);
     }
 
