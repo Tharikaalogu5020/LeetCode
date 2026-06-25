@@ -15,22 +15,23 @@
  */
 class Solution {
     
-    static int ans=0;
-    static int height=-1;
+    int ans=0;
+    int height=0;
     public int findBottomLeftValue(TreeNode root) {
-       ans=root.val;
-       height=-1;
+      
        find(root,0);
        return ans;
        
     }
  
-    public static void find(TreeNode root,int height1)
+    public  void find(TreeNode root,int height1)
     {
+
       if(root==null)
       {
         return;
       }  
+       height1++;
         if(root.left==null && root.right==null)
         {
             if(height1>height)
@@ -39,8 +40,8 @@ class Solution {
                 height=height1;
             }
         }
-        find(root.left,height1+1);
-        find(root.right,height1+1);
+        find(root.left,height1);
+        find(root.right,height1);
     }
 
 }
