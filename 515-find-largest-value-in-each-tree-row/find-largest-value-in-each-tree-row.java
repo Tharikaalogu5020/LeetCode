@@ -14,39 +14,27 @@
  * }
  */
 class Solution {
+    List<Integer> arr;
     public List<Integer> largestValues(TreeNode root) {
-        
-        ArrayList<Integer> arr=new ArrayList<>();
-        if(root==null)
-        {
-            return arr;
-        }
-        Queue<TreeNode> q=new LinkedList<>();
-        q.add(root);
-        while(!q.isEmpty())
-        {   
-
-            int size=q.size();
-            int max=Integer.MIN_VALUE;
-            for(int i=0;i<size;i++)
-            {
-                TreeNode curr=q.poll();
-                if(curr.val>max)
-                {
-                    max=curr.val;
-                }
-                if(curr.left!=null)
-                {
-                    q.add(curr.left);
-                }
-                if(curr.right!=null)
-                {
-                    q.add(curr.right);
-                }
-            }
-            arr.add(max);
-
-        }
+        arr=new ArrayList<>();
+        find(root,0);
         return arr;
+    }
+    public void find(TreeNode root,int level)
+    {
+        if(root!=null)
+        {
+            int val=root.val;
+            if(level==arr.size())
+            {
+                arr.add(val);
+            }
+            else
+            {
+                arr.set(level,Math.max(arr.get(level),val));
+            }
+            find(root.left,level+1);
+            find(root.right,level+1);
+        }
     }
 }
