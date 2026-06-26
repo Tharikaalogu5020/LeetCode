@@ -14,7 +14,7 @@
  * }
  */
 class Solution {
-    List<Integer> arr;
+   private List<Integer> arr;
     public List<Integer> largestValues(TreeNode root) {
         arr=new ArrayList<>();
         find(root,0);
