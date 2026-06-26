@@ -16,33 +16,31 @@
 class Solution {
     public boolean hasPathSum(TreeNode root, int targetSum) {
         ArrayList<Integer> arr=new ArrayList<>();
-        return solve(arr,root,targetSum);
+       return find(root,arr,targetSum);
     }
-    public boolean solve(ArrayList<Integer> arr,TreeNode root,int targetSum)
+    
+    public boolean find(TreeNode root,ArrayList<Integer> arr,int targetSum)
     {
-        if(root==null)
-        {
+         if(root==null)
+         {
             return false;
-        }
-        arr.add(root.val);
-        if(root.left==null&&root.right==null)
-        {
+         }
+         arr.add(root.val);
+         if(root.left==null && root.right==null)
+         {
             int sum=0;
-           for(int i:arr)
-           {
-              sum+=i;
-
-           }
-           if(sum==targetSum)
-           {
-            return true;
-           }
-        }
-        
-          boolean left=  solve(arr,root.left,targetSum);
-           boolean right= solve(arr,root.right,targetSum);
-        
-        arr.remove(arr.size()-1);
-        return left||right;
+            for(int i:arr)
+            {
+                sum+=i;
+            }
+            if(sum==targetSum)
+            {
+                return true;
+            }
+         }
+         boolean left=find(root.left,arr,targetSum);
+         boolean right=find(root.right,arr,targetSum);
+         arr.remove(arr.size()-1);
+         return left||right;
     }
 }
