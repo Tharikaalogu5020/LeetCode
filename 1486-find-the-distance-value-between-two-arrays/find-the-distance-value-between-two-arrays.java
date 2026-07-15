@@ -10,6 +10,7 @@ class Solution {
                if(Math.abs(arr1[i]-arr2[j])<=d)
                {
                     b[i]=true;
+                    break;
                }
             }
         
