@@ -14,10 +14,17 @@ class Solution {
     }
     public int rev(int v)
     {
-        String str=Integer.toString(v);
-        StringBuffer sb=new StringBuffer(str);
-        sb.reverse();
-        String s=sb.toString();
-        return Integer.parseInt(s);
+        // String str=Integer.toString(v);
+        // StringBuffer sb=new StringBuffer(str);
+        // sb.reverse();
+        // String s=sb.toString();
+        // return Integer.parseInt(s);
+      int rev = 0;
+        while(v>0){
+            int digit = v%10;
+            rev = rev*10+digit;
+            v /= 10;
+        }
+        return rev;
     }
 }
