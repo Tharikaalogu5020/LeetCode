@@ -17,14 +17,14 @@ class Solution {
                     return false;
                 }
             }
-            else{
+        else{
             if(m.containsValue(str[i]))
             {
                 return false;
             }
-            
+        }
              m.put(c,str[i]);
-            }
+            
         }
         return true;
     }
