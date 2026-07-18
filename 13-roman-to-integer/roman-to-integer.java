@@ -13,12 +13,11 @@ class Solution {
         {
             if(hm.get(s.charAt(i))<hm.get(s.charAt(i+1)))
             {
-                res-=hm.get(s.charAt(i));
-               
+                res=res-hm.get(s.charAt(i));
             }
             else
             {
-               res+=hm.get(s.charAt(i));
+                  res=res+hm.get(s.charAt(i));
             }
         }
         return res;
