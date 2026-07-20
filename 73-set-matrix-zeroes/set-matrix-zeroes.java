@@ -13,16 +13,20 @@ class Solution {
                 }
             }
         }
+       for(int indexrow:row)
+       {
+        for(int i=0;i<matrix[0].length;i++)
+        {
+            matrix[indexrow][i]=0;
+        }
+       }
+       for(int indexcol:col)
+       {
         for(int i=0;i<matrix.length;i++)
         {
-            for(int j=0;j<matrix[i].length;j++)
-            {
-                if(row.contains(i)||col.contains(j))
-                {
-                    matrix[i][j]=0;
-                }
-            }
+            matrix[i][indexcol]=0;
         }
+       }
     }
  
 }
