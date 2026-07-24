@@ -18,9 +18,6 @@ class Solution {
                 k--;
             }
         }
-        for(int p=0;p<m+n-1;p++)
-        {
-            System.out.print(nums1[p]+" ");
-        }
+      
     }
 }
