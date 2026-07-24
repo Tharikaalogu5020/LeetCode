@@ -10,21 +10,16 @@ class Solution {
             s.add(n);
         }
 
-        ArrayList<Integer> res = new ArrayList<>();
-
-        int i = 1;
-
-        // Find missing positive numbers until we get k numbers
-        while(res.size() < k) {
-
-            if(!s.contains(i)) {
-                res.add(i);
+        ArrayList<Integer> ans=new ArrayList<>();
+        int i=1;
+        while(ans.size()<k)
+        {
+            if(!s.contains(i))
+            {
+                ans.add(i);
             }
-
             i++;
         }
-
-        // k-th missing number (index k-1)
-        return res.get(k - 1);
+        return ans.get(k-1);
     }
 }
