@@ -11,7 +11,11 @@ class Solution {
           }
           else
           {
-            pro=Math.max(pro,prices[i]-min);
+           int p=prices[i]-min;
+           if(p>pro)
+           {
+            pro=p;
+           }
           }
 
        } 
