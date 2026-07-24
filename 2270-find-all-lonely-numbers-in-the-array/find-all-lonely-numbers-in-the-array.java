@@ -1,19 +1,20 @@
 class Solution {
     public List<Integer> findLonely(int[] nums) {
-        ArrayList<Integer> a=new ArrayList<>();
-        HashMap<Integer,Integer> m=new HashMap<>();
-        for(int n:nums)
-        {
-            m.put(n,m.getOrDefault(n,0)+1);
-        }
+        ArrayList<Integer> arr=new ArrayList<>();
+        HashMap<Integer,Integer> hm=new HashMap<>();
         for(int i=0;i<nums.length;i++)
         {
-            if(m.get(nums[i])==1 && !m.containsKey(nums[i]+1) && !m.containsKey(nums[i]-1))
+            hm.put(nums[i],hm.getOrDefault(nums[i],0)+1);
+        }
+        for(Map.Entry<Integer,Integer> h:hm.entrySet())
+        {
+              int key = h.getKey();
+               int value = h.getValue();
+            if(value==1 &&!hm.containsKey(key-1)&& !hm.containsKey(key+1))
             {
-                a.add(nums[i]);
+                arr.add(key);
             }
         }
-        return a;
-        
+        return arr;
     }
 }
