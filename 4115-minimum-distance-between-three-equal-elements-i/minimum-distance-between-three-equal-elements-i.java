@@ -11,8 +11,8 @@ class Solution {
        {
           int key=m.getKey();
           int val=m.getValue();
-          if(val>=3)
-          {
+         // if(val>=3)
+         // {
              ArrayList<Integer> arr=new ArrayList<>();
             for(int i=0;i<nums.length;i++)
             {
@@ -32,7 +32,7 @@ class Solution {
                 
             
           }
-       }
+     //  }
        }
       
 
