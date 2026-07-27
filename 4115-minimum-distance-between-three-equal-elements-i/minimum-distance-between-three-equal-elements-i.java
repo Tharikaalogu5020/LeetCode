@@ -21,21 +21,15 @@ class Solution {
                     arr.add(i);
                 }
             }
-            for(int i=0;i<arr.size()-2;i++)
+            for(int i=1;i<arr.size()-1;i++)
             {
-              for(int j=i+1;j<arr.size()-1;j++)
-              {
-                for(int k=j+1;k<arr.size();k++)
-                {
-                      int  ans1=Math.abs(arr.get(i)-arr.get(j));
-            int ans2=Math.abs(arr.get(j)-arr.get(k));
-            int ans3=Math.abs(arr.get(k)-arr.get(i));
+              
+           int  ans1=Math.abs(arr.get(i-1)-arr.get(i));
+            int ans2=Math.abs(arr.get(i)-arr.get(i+1));
+            int ans3=Math.abs(arr.get(i+1)-arr.get(i-1));
             int res=ans1+ans2+ans3;
             min=Math.min(res,min);
-                }
-
-              }
-            
+                
             
           }
        }
