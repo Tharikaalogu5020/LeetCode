@@ -7,7 +7,7 @@ class Solution {
         for(int j=i+1;j<=s.length();j++)
         {
           String res=s.substring(i,j);
-            if(istrue(res)&& res.length() > ans.length())
+            if(istrue(res)&& res.length()>ans.length())
             {
               ans=res;
             }
