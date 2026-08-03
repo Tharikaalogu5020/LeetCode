@@ -2,13 +2,13 @@ class Solution {
     public int lengthOfLongestSubstring(String s) {
         int left=0;
         int max=Integer.MIN_VALUE;
-        ArrayList<Character> arr=new ArrayList<>();
+        HashSet<Character> arr=new HashSet<>();
         for(int right=0;right<s.length();right++)
         {
             char c=s.charAt(right);
             while(arr.contains(c))
             {
-                arr.remove(0);
+                arr.remove(s.charAt(left));
                 left++;
             }
             arr.add(c);
