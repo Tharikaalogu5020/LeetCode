@@ -5,7 +5,7 @@ class Solution {
             return 0;
         }
         int left=0;
-        int max=Integer.MIN_VALUE;
+        int max=0;
         HashSet<Character> arr=new HashSet<>();
         for(int right=0;right<s.length();right++)
         {
@@ -18,6 +18,6 @@ class Solution {
             arr.add(c);
             max=Math.max(max,right-left+1);
         }
-        return max==Integer.MIN_VALUE?0:max;
+        return max;
     }
 }
