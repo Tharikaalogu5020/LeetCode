@@ -3,7 +3,7 @@ class Solution {
         int min=Integer.MAX_VALUE;
         int max=Integer.MIN_VALUE;
         ArrayList<Integer> arr=new ArrayList<>();
-        ArrayList<Integer> res=new ArrayList<>();
+       // ArrayList<Integer> res=new ArrayList<>();
         for(int n:nums)
         {
             arr.add(n);
@@ -21,11 +21,15 @@ class Solution {
         }
         for(int i=min;i<=max;i++)
         {
-            if(!arr.contains(i))
+            if(arr.contains(i))
             {
-                res.add(i);
+                arr.remove(Integer.valueOf(i));
+            }
+            else
+            {
+                arr.add(i);
             }
         }
-return res;
+return arr;
     }
 }
