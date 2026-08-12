@@ -9,8 +9,11 @@ class Solution {
            freq[s.charAt(right)-'a']++;
            if(freq(freq,k))
            {
-                 max=Math.max(right-left+1,max);
+      
+            max=Math.max(right-left+1,max);
+        
            }
+          
 
         }
         }
@@ -24,15 +27,18 @@ class Solution {
             hm.put(c,hm.getOrDefault(c,0)+1);
         }
         for(Map.EntrySet<>)*/
-       
+       boolean check=true;
+    
         for(int i=0;i<26;i++)
         {
             if(freq[i]>0 &&freq[i]<k)
             {
-                 return false;
+                check= false;
+                break;
                  
             }
         }
-        return true;
+      
+        return check;
     }
 }
